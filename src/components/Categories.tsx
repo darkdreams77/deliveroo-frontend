@@ -38,7 +38,7 @@ export const Categories = ({ categories }: CategoriesProps) => {
   };
 
   return (
-    <div className="bg-gray-200 dark:bg-gray-900 ">
+    <div className="bg-gray-200 dark:bg-zinc-900 ">
       <Container className="py-6 flex justify-between gap-5 flex-col lg:flex-row">
         <section className="w-full lg:w-[calc(100%-350px)] ">
           {categories

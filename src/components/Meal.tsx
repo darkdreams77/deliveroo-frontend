@@ -9,7 +9,7 @@ type MealProps = {
 export const Meal = ({ meal, onClick }: MealProps) => {
   return (
     <li
-      className="bg-white p-4 card-interactive cursor-pointer rounded-sm grow md:flex-[calc(50%-10px)] lg:flex-[100%] lg:w-full lg:grow xl:flex-[calc(50%-10px)] md:grow-0 flex gap-2 justify-between h-40 content-start"
+      className="bg-white dark:bg-zinc-950 p-4 card-interactive cursor-pointer rounded-sm grow md:flex-[calc(50%-10px)] lg:flex-[100%] lg:w-full lg:grow xl:flex-[calc(50%-10px)] md:grow-0 flex gap-2 justify-between h-40 content-start"
       onClick={onClick}
     >
       <div>

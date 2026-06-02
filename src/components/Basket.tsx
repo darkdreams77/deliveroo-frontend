@@ -45,7 +45,7 @@ export const Basket = ({ orders, setOrders }: BasketProps) => {
   }, [subtotal]);
 
   return (
-    <aside className="w-full lg:w-87.5 bg-white p-4 self-start rounded-sm shadow-2xl sticky top-5">
+    <aside className="w-full lg:w-87.5 bg-white dark:bg-zinc-950 p-4 self-start rounded-sm shadow-2xl sticky top-5">
       <button
         className="bg-teal-500 rounded-sm w-full p-4 font-bold text-white disabled:bg-gray-400 disabled:text-gray-500 cursor-pointer disabled:cursor-default"
         disabled={false}
