@@ -1,0 +1,272 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap"); */
+@import "assets/css/font.css";
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Thème Deliveroo — Tailwind CSS v4 (CSS-first config)
+   À importer dans ton fichier CSS principal (ex: src/index.css)
+   Compatible Vite + @tailwindcss/vite
+───────────────────────────────────────────────────────────────────────────── */
+
+@theme {
+  /* ── Couleurs ────────────────────────────────────────────────────────────── */
+
+  /* Teal principal Deliveroo */
+  --color-teal-50: #e6faf8;
+  --color-teal-100: #c2f3ee;
+  --color-teal-200: #85e7dd;
+  --color-teal-300: #47dbcc;
+  --color-teal-400: #0acfbb;
+  --color-teal-500: #00ccbc; /* ★ Couleur signature Deliveroo */
+  --color-teal-600: #00a99a;
+  --color-teal-700: #008577;
+  --color-teal-800: #006157;
+  --color-teal-900: #003d37;
+  --color-teal-950: #001f1c;
+
+  /* Fond principal & surface */
+  --color-canvas: #f6f6f6;
+  --color-canvas-white: #ffffff;
+  --color-canvas-dark: #1a1a1a;
+
+  /* Texte */
+  --color-ink: #2e3333; /* Quasi-noir Deliveroo */
+  --color-ink-muted: #717171;
+  --color-ink-light: #9b9b9b;
+  --color-ink-inverse: #ffffff;
+
+  /* Accent / CTA secondaire */
+  --color-coral: #ff8000;
+  --color-coral-light: #ffb266;
+  --color-coral-dark: #cc6600;
+
+  /* États sémantiques */
+  --color-success: #00b67a;
+  --color-success-light: #e6f9f3;
+  --color-warning: #f5a623;
+  --color-warning-light: #fef5e7;
+  --color-error: #e74c3c;
+  --color-error-light: #fdedec;
+  --color-info: #3498db;
+  --color-info-light: #ebf5fb;
+
+  /* Bordures & dividers */
+  --color-border: #e8e8e8;
+  --color-border-strong: #c8c8c8;
+  --color-border-focus: #00ccbc;
+
+  /* ── Typographie ─────────────────────────────────────────────────────────── */
+
+  --font-sans:
+    "IBM Plex Sans", "GT Walsheim", "Graphik", -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-display: "Geist", "GT Walsheim", sans-serif;
+  --font-mono: "Geist Mono", "JetBrains Mono", "Fira Code", monospace;
+
+  --text-2xs: 0.625rem;
+  --text-2xs--line-height: 0.875rem;
+  --text-xs: 0.75rem;
+  --text-xs--line-height: 1rem;
+  --text-sm: 0.875rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base: 1rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg: 1.125rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl: 1.25rem;
+  --text-xl--line-height: 1.875rem;
+  --text-2xl: 1.5rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl: 1.875rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl: 2.25rem;
+  --text-4xl--line-height: 2.75rem;
+  --text-5xl: 3rem;
+  --text-5xl--line-height: 3.5rem;
+  --text-6xl: 3.75rem;
+  --text-6xl--line-height: 1;
+
+  --tracking-tightest: -0.04em;
+  --tracking-tighter: -0.02em;
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.01em;
+  --tracking-wider: 0.05em;
+  --tracking-widest: 0.1em;
+
+  /* ── Border-radius ───────────────────────────────────────────────────────── */
+
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 20px;
+  --radius-3xl: 24px;
+  --radius-card: 12px; /* Cartes restaurants / produits */
+  --radius-button: 8px; /* Boutons CTA */
+  --radius-badge: 100px; /* Pills / badges (fully rounded) */
+  --radius-full: 9999px;
+
+  /* ── Ombres ──────────────────────────────────────────────────────────────── */
+
+  --shadow-none: none;
+  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-sm:
+    0 1px 3px 0 rgba(0, 0, 0, 0.08), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  --shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 24px 0 rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 16px 40px 0 rgba(0, 0, 0, 0.14);
+  --shadow-card: 0 2px 8px 0 rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.04);
+  --shadow-card-hover:
+    0 8px 24px 0 rgba(0, 0, 0, 0.14), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  --shadow-teal: 0 4px 14px 0 rgba(0, 204, 188, 0.4);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+
+  /* ── Breakpoints ─────────────────────────────────────────────────────────── */
+
+  --breakpoint-xs: 375px; /* Petits mobiles (iPhone SE) */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1440px; /* Desktop Deliveroo max-width */
+  --breakpoint-3xl: 1920px;
+
+  /* ── Max-width ───────────────────────────────────────────────────────────── */
+
+  --container-xs: 320px;
+  --container-sm: 480px;
+  --container-md: 640px;
+  --container-lg: 768px;
+  --container-xl: 1024px;
+  --container-2xl: 1280px;
+  --container-page: 1440px; /* Conteneur principal Deliveroo */
+
+  /* ── Transitions ─────────────────────────────────────────────────────────── */
+
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* Élasticité hover cards */
+  --ease-snappy: cubic-bezier(0.23, 1, 0.32, 1);
+
+  /* ── Animations ──────────────────────────────────────────────────────────── */
+
+  --animate-fade-in: fade-in 200ms ease-out;
+  --animate-slide-up: slide-up 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  --animate-slide-down: slide-down 250ms cubic-bezier(0.23, 1, 0.32, 1);
+  --animate-scale-in: scale-in 200ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  --animate-shimmer: shimmer 2s linear infinite;
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-down {
+    from {
+      transform: translateY(-8px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale-in {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    from {
+      background-position: -200% 0;
+    }
+    to {
+      background-position: 200% 0;
+    }
+  }
+
+  /* ── Z-index ─────────────────────────────────────────────────────────────── */
+
+  --z-sticky: 100; /* Header sticky */
+  --z-overlay: 200; /* Overlay backdrop */
+  --z-modal: 300; /* Modales */
+  --z-toast: 400; /* Notifications toast */
+  --z-tooltip: 500; /* Tooltips */
+}
+
+/* ── Utilitaires custom ────────────────────────────────────────────────────── */
+
+@utility skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-border) 25%,
+    #f0f0f0 50%,
+    var(--color-border) 75%
+  );
+  background-size: 200% 100%;
+  animation: var(--animate-shimmer);
+  border-radius: var(--radius-md);
+}
+
+@utility focus-ring {
+  outline: none;
+  box-shadow: 0 0 0 3px
+    color-mix(in srgb, var(--color-teal-500) 20%, transparent);
+}
+
+@utility card-interactive {
+  transition:
+    box-shadow 200ms var(--ease-spring),
+    transform 200ms var(--ease-spring);
+
+  &:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+}
+
+@utility text-balance {
+  text-wrap: balance;
+}
+
+@utility scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
