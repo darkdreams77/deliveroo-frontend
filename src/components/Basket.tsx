@@ -61,20 +61,20 @@ export const Basket = ({ orders, setOrders }: BasketProps) => {
             <ul className="my-4 border-b border-b-gray-200 pb-2">
               {orders.map((order) => (
                 <li className="mb-3 flex gap-2 items-start justify-between w-full">
-                  <div className="flex gap-1 items-center text-gray-600 ">
+                  <div className="flex gap-1 items-center text-zinc-600 dark:text-zinc-500 ">
                     <button
                       onClick={() => removeOne(order)}
                       className="text-teal-500"
                     >
                       <FaMinusCircle />
                     </button>
-                    {order.quantity}{" "}
+                    {order.quantity}
                     <button
                       onClick={() => addOne(order)}
                       className="text-teal-500"
                     >
                       <FaPlusCircle />
-                    </button>{" "}
+                    </button>
                   </div>
                   <div className="flex-1">{order.meal.title}</div>
                   <div className="">
