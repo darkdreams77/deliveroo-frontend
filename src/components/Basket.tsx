@@ -102,14 +102,14 @@ export const Basket = ({ orders, setOrders }: BasketProps) => {
                     <div className="flex gap-1 items-center text-zinc-600 dark:text-zinc-500 ">
                       <button
                         onClick={() => removeOne(order)}
-                        className="text-teal-500"
+                        className="text-teal-500 cursor-pointer"
                       >
                         <FaMinusCircle />
                       </button>
                       {order.quantity}
                       <button
                         onClick={() => addOne(order)}
-                        className="text-teal-500"
+                        className="text-teal-500 cursor-pointer"
                       >
                         <FaPlusCircle />
                       </button>
