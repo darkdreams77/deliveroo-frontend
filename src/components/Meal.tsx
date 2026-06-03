@@ -16,7 +16,10 @@ export const Meal = ({ meal, onClick }: MealProps) => {
       <div>
         <h3 className="mb-2">{meal.title}</h3>
         {meal.description && (
-          <p className="text-gray-500 text-sm mb-2 overflow-hidden text-ellipsis h-10">
+          <p
+            className="text-gray-500 text-sm mb-2 overflow-hidden text-ellipsis h-10"
+            title={meal.description}
+          >
             {meal.description}
           </p>
         )}

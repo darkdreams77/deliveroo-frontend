@@ -20,6 +20,8 @@ export const Basket = ({ orders, setOrders }: BasketProps) => {
     0,
   );
 
+  const totalItems = orders.reduce((sum, order) => sum + order.quantity, 0);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setBasketVisible(entry.isIntersecting),
@@ -74,7 +76,7 @@ export const Basket = ({ orders, setOrders }: BasketProps) => {
           className="bg-teal-500 rounded-sm w-full p-4 font-bold text-white disabled:bg-gray-400 disabled:text-gray-500 cursor-pointer disabled:cursor-default"
           disabled={orders.length === 0}
         >
-          Voir le panier {orders.length > 0 && <>({orders.length})</>}
+          Voir le panier {totalItems > 0 && <>({totalItems})</>}
         </button>
       </aside>
       <aside
