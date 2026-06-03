@@ -66,7 +66,7 @@ export const Basket = ({ orders, setOrders }: BasketProps) => {
   return (
     <>
       <aside
-        className={`lg:hidden sticky bottom-0 p-4 dark:bg-zinc-950 w-full left-0 z-10 rounded-sm ${
+        className={`lg:hidden sticky bottom-0 p-4 w-full left-0 z-10 rounded-sm ${
           basketVisible ? "hidden" : "block"
         }`}
         id="basket-mobile"
